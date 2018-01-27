@@ -1,4 +1,3 @@
-// index2.js
 const axios = require("axios")
 
 /*
@@ -10,6 +9,7 @@ const baseURL = "https://blockchain.info"
 
 const api = axios.create({ baseURL })
 
-const params = { q : "axios" }
-
-api.get("/pt/ticker", { params }).then(ret => console.log(ret.data))
+api.get("/pt/ticker")
+.then(ret => {
+    console.log("BRL currency of BTC = " + ret.data.BRL.last)
+})
